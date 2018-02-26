@@ -71,7 +71,7 @@ class Converter
             {
                 printf("\r%u               ", ++counter);
 
-                StringVector m = get_matches(buf, "^Time: ([0-9]+,?[0-9]+?);OpcodeType: (ClientMessage|ServerMessage);OpcodeValue: ([0-9]+);Packet: ([0-9A-Z]*);$");
+                StringVector m = get_matches(buf, "Time: (.*?);OpcodeType: (ClientMessage|ServerMessage);OpcodeValue: ([0-9]+);Packet: ([0-9A-Z]*);");
                 if (!m.size())
                 {
                     std::cout << std::endl << "ERROR: wrong format at line " << counter << ". Skipping." << std::endl;
